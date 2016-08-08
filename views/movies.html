@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>Template movies</title>
+    </head>
+
+    <body>
+        <h1>Movies</h1>
+        <ul>
+            {% for movie in movies %}
+                <li>{{movie.title}}, {{movie.year}}</li>
+            {% else %}
+                <li>No movies found</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>

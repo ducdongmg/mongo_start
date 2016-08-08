@@ -1,0 +1,19 @@
+{
+    "name": "express_train",
+    "version": "0.0.1",
+    "author": {
+        "name": "nddong"
+    },
+    "dependencies": {
+        "express": "*",
+        "mongodb": "*",
+        "consolidate": "*",
+        "nunjucks": "*"
+    },
+    "description": "No description",
+    "repository": {
+        "url": "localhost"
+    },
+    "readme": "readme",
+    "license": "BSD"
+}
