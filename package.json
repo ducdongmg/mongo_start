@@ -8,7 +8,8 @@
         "express": "*",
         "mongodb": "*",
         "consolidate": "*",
-        "nunjucks": "*"
+        "nunjucks": "*",
+        "body-parser": "*"
     },
     "description": "No description",
     "repository": {
