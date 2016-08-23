@@ -9,14 +9,14 @@ exercise.
 
 To import a fresh version of the companies.json data, please type the following:
 
-mongoimport -d crunchbase -c companies companies.json
+#> mongoimport -d crunchbase -c companies companies.json
 
 
 If you have already mongoimported this data you will first need to drop the crunchbase database
 in the Mongo shell. Do that by typing the following two commands, one at a time, in the Mongo shell:
 
-use crunchbase
-db.dropDatabase()
+#> use crunchbase
+#> db.dropDatabase()
 
 
 The code below is complete with the exception of the queryDocument() function.
@@ -29,7 +29,7 @@ comments you will find in that function.
 
 Once complete, run this application by typing:
 
-node buildingQueryDocuments.js
+#> node buildingQueryDocuments.js
 
 
 When you are convinced you have completed the application correctly, please enter the 
