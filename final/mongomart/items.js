@@ -55,7 +55,7 @@ function ItemDAO(database) {
         var categories = [];
         var category = {
             _id: "All",
-            num: 9999
+            num: 0
         };
 
         categories.push(category)
@@ -65,7 +65,21 @@ function ItemDAO(database) {
         // TODO Include the following line in the appropriate
         // place within your code to pass the categories array to the
         // callback.
-        callback(categories);
+        this.db.collection('item').aggregate(
+        [
+            {$group: {_id: "$category", num: {$sum: "$_id"}}}, 
+			{$sort: {_id: 1}}
+        ]
+        ).toArray(function(err, categories) {
+            var sum = 0;
+            for (var cat in categories) {
+                var obj = categories[cat];
+                sum += obj.num;
+            }
+            category.num+=sum;
+            categories.push(category);
+            callback(categories);
+        });
     }
 
 
