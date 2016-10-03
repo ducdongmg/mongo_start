@@ -247,7 +247,7 @@ function ItemDAO(database) {
             _id : itemId  
         }
         ).toArray(function(err, item){
-            callback(item);
+            callback(item[0]);
         });
     }
 
