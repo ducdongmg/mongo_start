@@ -242,7 +242,13 @@ function ItemDAO(database) {
         // TODO Include the following line in the appropriate
         // place within your code to pass the matching item
         // to the callback.
-        callback(item);
+        this.db.collection("item").find(
+        {
+            _id : itemId  
+        }
+        ).toArray(function(err, item){
+            callback(item);
+        });
     }
 
 
