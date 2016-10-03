@@ -187,7 +187,16 @@ function ItemDAO(database) {
         // TODO Include the following line in the appropriate
         // place within your code to pass the items for the selected page
         // of search results to the callback.
-        callback(items);
+        this.db.collection('item').find(
+        {
+            // create index in command line before run web page: 
+            // #db.item.createIndex({title: "text", slogan: "text", description: "text"});
+            $text:
+            {$search: query}
+        }
+        ).toArray(function(err, items) {
+            callback(items);
+        });
     }
 
 
