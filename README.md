@@ -1,1 +1,3 @@
-# mongo_start
+# mongo start
+
+Something about learning mongodb
