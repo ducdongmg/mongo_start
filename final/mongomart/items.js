@@ -119,7 +119,18 @@ function ItemDAO(database) {
         // TODO Include the following line in the appropriate
         // place within your code to pass the items for the selected page
         // to the callback.
-        callback(pageItems);
+        // console.log(page);
+        // console.log(skipVal);
+        this.db.collection('item').aggregate(
+        [
+            {$match: {category: category}},
+			{$sort: {_id: 1}},
+            {$skip : page > 0 ? page*5 :0},
+            {$limit: itemsPerPage}
+        ]
+        ).toArray(function(err, categories) {
+            callback(categories);
+        });
     }
 
 
